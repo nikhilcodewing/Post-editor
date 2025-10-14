@@ -1,5 +1,5 @@
 
-## 🔄 Control Flow: Editor Subsystem (Post Creation & Editing)
+## 🔄 Control Flow: Editor (Post Creation & Editing)
 
 ### 🎯 Entry Point
 
@@ -54,13 +54,12 @@ Triggered by `@submit="submitForm"`:
 
 ### 🔁 Additional Features
 
-* Auto-save support is implied (debounced watchers, manual submit)
 * SEO tools are integrated via modals and child components (`SeoAnalyzer`, `PageSeoSetting`)
 * Preview functionality is computed via `postUrl`
 
 ---
 
-## 📦 Data Flow: Editor Subsystem
+## 📦 Data Flow: Editor
 
 ### 📁 In-Memory Structure (`formData`)
 
@@ -102,14 +101,14 @@ interface FormDataInterface {
 
 * `description` is stringified if not already
 * Image/gallery ID added to payload
-* Conditional `previous_image_id` used if image changed
 
-### 🧾 Sample Payload Sent to API
+### 🧾 Sample Payload Sent to /posts API
 
 ```json
 {
   "title": "My New Post",
   "slug": "my-new-post",
+   "status": true,
   "published": true,
   "description": "{\"blocks\":...}",
   "gallery_id": "123",
@@ -119,3 +118,42 @@ interface FormDataInterface {
   "is_sticky": false
 }
 ```
+
+### 𓊳 Related Tables
+
+|  Posts:  |
+| -------------- |
+| id |
+| title |
+| slug |
+| focus_keywords |
+| status |
+| published |
+| description |
+| user_id (fk) |
+| author_id (fk) |
+| published_on |
+| is_sticky |
+| created_at |
+| updated_at |
+| agency_id (fk) |
+
+| Post_post_category: |
+| -------------- |
+| id |
+| post_id (fk) |
+| post_category_id (fk) |
+| created_at |
+| updated_at |
+
+| Galleryables: |
+| -------------- |
+| id |
+| gallery_id (fk) |
+| galletyable_id |
+| thumbnail_path |
+| galleryable_type |
+| created_at |
+| updated_at |
+
+
