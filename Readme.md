@@ -28,7 +28,7 @@
 
   * Auto-generates slug via `generateSlug()` (debounced `watch()` hook)
 * Slug can be edited inline
-* Description edited via `Editor.vue` (likely a rich text or block editor)
+* Description edited via `Editor.vue` 
 * SEO modal, category modal, and image selection modals open via respective toggles
 
 ### 💾 Saving or Publishing Flow
